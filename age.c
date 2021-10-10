@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <cs50.h> 
-
+// This program tells you when will you turn 100 years old
 int main(void)
 {
     string name = get_string("Enter your name: ");
