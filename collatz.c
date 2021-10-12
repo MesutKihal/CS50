@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+// This program will generate all the terms of the collatz conjecture
 int main(void)
 {
     int i;
