@@ -1,22 +1,24 @@
 #include <stdio.h>
 
-const int MAXLEN = 20;
-
 int main()
 {
     // Input
+    int MAXLEN;
+    scanf("%i\n", &MAXLEN);
     char s[MAXLEN];
-    for (int i=0; i<MAXLEN; i++){
-        scanf("%c", &s[i]);
-    }
+    scanf("%s\n", s);
+    
     // Encrypt
-    char encrypt_text(char plain_text[MAXLEN], int key){
-        int cipher_text[MAXLEN];
+    void encrypt_text(char plain_text[MAXLEN], int key){
+        char cipher_text[MAXLEN];
         for (int i=0; i<MAXLEN; i++){
-            cipher_text[i] = int plain_text[i] + key;
+            int ch = (int)plain_text[i] + key;
+            cipher_text[i] = (char) ch;
         }
-        return cipher_text;
+        for (int j=0; j<MAXLEN; j++){
+            printf("%c", cipher_text[j]);
+        }
     }
-    printf("%c", encrypt_text(s, 10));
+    encrypt_text(s, 5);
     return 0;
 }
