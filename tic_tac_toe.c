@@ -19,12 +19,33 @@ void updateBoard(int arr[3][3]){
     }
 }
 
+
 int main()
 {
     int arr[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
     char cmd[2];
     int gameover = 0;
     char *turn = "X";
+    void checkBoard(int arr[3][3]){
+        // Function not finished
+        if (arr[0][0] ==  arr[0][1] ==  arr[0][2] != 0){
+            gameover = 1;
+        }else if (arr[1][0] == arr[1][1] == arr[1][2] != 0){
+            gameover = 1;
+        }else if (arr[2][0] == arr[2][1] == arr[2][2] != 0){
+            gameover = 1;
+        }else if (arr[0][0] == arr[1][0] == arr[2][0] != 0){
+            gameover = 1;
+        }else if (arr[0][1] == arr[1][1] == arr[2][1] != 0){
+            gameover = 1;
+        }else if (arr[0][2] == arr[1][2] == arr[2][2] != 0){
+            gameover = 1;
+        }else if (arr[0][0] == arr[1][1] == arr[2][2] != 0){
+            gameover = 1;
+        }else if (arr[0][2] == arr[1][1] == arr[2][0] != 0){
+            gameover = 1;
+        }
+    }
     do
     {
         printf("Enter your command: ");
@@ -35,12 +56,23 @@ int main()
         int row = (int) (temp - '0')-1;
 
         if (turn == "X"){
-            arr[row][column] = 1;
-            turn = "O";
+            if (arr[row][column] != 0){
+                printf("\nWrong command: column already marked\n");
+                continue;
+            }else{
+                arr[row][column] = 1;
+                turn = "O";
+            }
         }else if (turn == "O"){
-            arr[row][column] = 2;
-            turn = "X";
+            if (arr[row][column] != 0){
+                printf("\nWrong command: column already marked\n");
+                continue;
+            }else{
+                arr[row][column] = 2;
+                turn = "X";
+            }
         }
+        checkBoard(arr);
         updateBoard(arr);
     }while (gameover == 0);
     return 0;
