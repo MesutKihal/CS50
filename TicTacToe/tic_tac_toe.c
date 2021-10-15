@@ -74,16 +74,16 @@ int main()
     do
     {
         printf("\n%c's turn\n", *turn);
-        printf("Enter your coordinates: ");
+        printf("Enter your coordinates \nex: a1, b3, c2 ....: ");
         scanf("%s", cmd);
         
         int column = (int) cmd[0]-97;
         char temp = cmd[1];
         int row = (int) (temp - '0')-1;
-
+        
         if (turn == "X"){
             if (arr[row][column] != 0){
-                printf("\nWrong command: column already marked\n");
+                printf("\ncolumn already marked\n");
                 continue;
             }else{
                 arr[row][column] = 1;
@@ -91,7 +91,7 @@ int main()
             }
         }else if (turn == "O"){
             if (arr[row][column] != 0){
-                printf("\nWrong command: column already marked\n");
+                printf("\ncolumn already marked\n");
                 continue;
             }else{
                 arr[row][column] = 2;
