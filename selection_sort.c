@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+// Not working
 int main()
 {
     int arr[] = {5, 3, 21, 1, 8, 34, 13, 2};
