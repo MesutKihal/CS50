@@ -17,13 +17,24 @@ int main()
     }node;
     // create hashtable
     node *hashtable = malloc(sizeof(node)*10);
-    // populate the hashtable
-    for (int i=0; i<10; i++){
-        node *temp = malloc(sizeof(node));
-        hashtable[i] = *temp;
-        free(temp);
+    // declare insert function
+    void insert(struct node hashtable[], char str[]){
+        int index = hash(str, 10);
+        int size = (int) strlen(str);
+        if (hashtable[index].str[0] == '\0'){
+            for (int i=0;i<size;i++){
+                hashtable[index].str[i] = str[i];
+            }
+        }
+        // ....
     }
-    
+    // test..
+    char name[3];
+    scanf("%s", name);
+    insert(hashtable, name);
+    for (int i=0;i<10;i++){
+        printf("%d -> %s\n", i, hashtable[i].str);
+    }
     return 0;
 }
 // declare the hash function
