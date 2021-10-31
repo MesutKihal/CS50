@@ -11,7 +11,7 @@ int main()
         char value[30];
     }dict;
     
-    // declate the set function
+    // declare the set function
     void set(char key[], char value[], struct dict arr[], int size){
         int key_len = (int) strlen(key);
         int value_len = (int) strlen(value);
@@ -56,7 +56,7 @@ int main()
         }
         
     }
-    // create a dict array with the size of five dicts
+    // create a dict array
     struct dict *arr = malloc(sizeof(dict) * 5); // allocate five slots in memory with the size of a dict
     // populate the dict array
     set("bob", "bob.25@gmail.com", arr, 5);
