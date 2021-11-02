@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define nullptr ((void*)0)
+
 int main()
 {
     typedef struct vertex
@@ -19,7 +21,7 @@ int main()
     }
     void addEdge(struct vertex a, struct vertex b){
         for (int i=0; i<5; i++){
-            if (a.edges[i] != nullptr){
+            if (a.edges[i] == nullptr){
                a.edges[i] = &b;
                break;
             }
