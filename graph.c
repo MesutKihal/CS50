@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define nullptr ((void*)0)
 
 int main()
 {
@@ -19,10 +18,10 @@ int main()
             }
         }
     }
-    void addEdge(struct vertex a, struct vertex b){
+    void addEdge(struct vertex *a, struct vertex *b){
         for (int i=0; i<5; i++){
-            if (a.edges[i] == nullptr){
-               a.edges[i] = &b;
+            if (a->edges[i] == NULL){
+               *a->edges[i] = *b;
                break;
             }
         }
@@ -35,16 +34,7 @@ int main()
     addVertex(10, graph);
     addVertex(9, graph);
     addVertex(6, graph);
-    addEdge(graph[0], graph[1]);
-    addEdge(graph[0], graph[2]);
-    addEdge(graph[2], graph[3]);
-    addEdge(graph[1], graph[4]);
-    addEdge(graph[3], graph[4]);
+    
 
-    for (int i=0; i<5; i++){
-        for (int j=0; j<5; j++){
-            printf("%d -> %p\n", graph[i].value, graph[i].edges[0]);
-        }
-    } 
     return 0;
 }
