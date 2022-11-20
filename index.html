@@ -1,0 +1,121 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>
+			Google Search
+		</title>
+		
+		<style>
+			.container{
+				display: grid;
+				items-align: center;
+			}
+			.table{
+				margin: auto;
+				overflow: hidden;
+				width: 50%;
+			}
+			.th{
+				padding: 5px;
+				float: left;
+				font-size: 150px;
+				font-family: gill sans mt;
+			}
+			#big-g{
+				color: #1d61ae;
+			}
+			#small-o{
+				color: red;
+			}
+			#second-o{
+				color: #f6cb1c;
+			}
+			#small-g{
+				color: #1d61ae;
+			}
+			#small-l{
+				color: #4cc418;
+			}
+			#small-e{
+				color: red;
+			}
+			.wrapper{
+				display: grid;
+				align-items: center;
+				
+			}
+			.inner{
+				margin: auto;
+				width: 50%;
+			}
+			#text{
+				margin: auto;
+				width: 75%;
+				font-family: consolas;
+				font-size: 15px;
+				padding: 3px;
+				margin-top: 30px;
+				border-radius: 10px;
+				border: 1px solid;
+			}
+			#submit{
+				margin: auto;
+				width: 25%;
+				font-family: consolas;
+				font-size: 15px;
+				padding: 3px;
+				margin-top: 30px;
+				border-radius: 10px;
+				border: 1px solid;
+			}
+			.input-div{
+				display: grid;
+				align-text: center;
+			}
+			.links{
+				margin: auto;
+				width: 50%;
+				text-align: right;
+				color: blue;
+				font-family: gill sans mt;
+			}
+		</style>
+		<div class="links">
+			<a href="images.html">Google Image Search</a>
+		</div>
+		<div class="links">
+			<a href="advanced.html">Google Advanced Search</a>
+		</div>
+	</head>
+	<body>
+		<form action="https://www.google.com/search">
+			<div class="container">
+				<div class="table">
+					<div class="th" id="big-g">G</div>
+					<div class="th" id="small-o">o</div>
+					<div class="th" id="second-o">o</div>
+					<div class="th" id="small-g">g</div>
+					<div class="th" id="small-l">l</div>
+					<div class="th" id="small-e">e</div>
+				</div>
+			</div>
+			<div class="wrapper">
+				<div class="inner">
+					<div class="input-div">
+						<input id="text" type="text" name="q">
+					</div>
+					<div class="input-div">
+						<table>
+							<th style="width: 100%;">
+								<input name="btnK" id="submit" type="submit" value="I'm Feeling Lucky">
+								<input name="btnI" id="submit" type="submit" value="Google Search">
+							</th>
+					</div>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
